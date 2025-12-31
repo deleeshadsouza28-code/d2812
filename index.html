@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faculty Leave System - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Faculty Leave Management</h1>
+
+    <!-- Teacher Leave Request -->
+    <div class="card">
+      <h2>Request Leave</h2>
+      <label>Teacher ID:</label>
+      <input type="number" id="tid" placeholder="Enter your ID"><br>
+
+      <label>Date:</label>
+      <input type="date" id="date"><br>
+
+      <label>Time Slot:</label>
+      <input type="text" id="time" placeholder="09AM"><br>
+
+      <button class="btn" onclick="requestLeave()">Request Leave</button>
+    </div>
+
+    <!-- Available Teachers -->
+    <div class="card">
+      <h2>Available Teachers for Substitution</h2>
+      <ul id="freeList"></ul>
+    </div>
+
+    <!-- Admin Pending Requests -->
+    <div class="card">
+      <h2>Pending Leave Requests (Admin)</h2>
+      <table id="pending">
+        <thead>
+          <tr>
+            <th>Req ID</th>
+            <th>Teacher</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Substitute</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>showPending()</script>
+</body>
+</html>
